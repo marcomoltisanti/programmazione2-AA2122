@@ -1,4 +1,4 @@
-##Ricerca dei numeri primi minori o uguali a un intero N
+## Ricerca dei numeri primi minori o uguali a un intero N
 
 1. [x] dato num in [2, n] cerco un suo divisore in [2, num/2] se non lo trovo allora num e' primo;
 2. [ ] dato num in [2, n] cerco un suo divisore in [2, sqrt(num)] se non lo trovo allora num e' primo;
