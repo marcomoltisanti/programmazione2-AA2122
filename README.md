@@ -7,3 +7,8 @@
 2. Lezione 02 - 09/03/22
 - Ripasso array: inizializzazione, allocazione statica e dinamica, utilizzo di array come parametri
 - Esercizi   
+3. Lezione 03 - 14/03/22
+- Ricorsione e induzione matematica: elementi teorici
+- Implementazione di semplici funzioni ricorsive
+- Eliminazione della ricorsione
+- Esercizi
