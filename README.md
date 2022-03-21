@@ -12,3 +12,7 @@
 - Implementazione di semplici funzioni ricorsive
 - Eliminazione della ricorsione
 - Esercizi
+4. Lezione 04 - 16/03/22
+- Introduzione alla complessità
+5. Lezione 05 - 21/03/22
+- Relazioni di ricorrenza
