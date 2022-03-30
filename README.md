@@ -16,3 +16,10 @@
 - Introduzione alla complessità
 5. Lezione 05 - 21/03/22
 - Relazioni di ricorrenza
+6. Lezione 06 - 23/03/22
+- Esercitazione su array e ricorsine
+7. Lezione 07 - 28/03/22
+- Ricerca lineare e dicotomica
+- Ordinamento per scambio, SelectionSort, InsertionSort, BubbleSort
+8. Lezione 08 - 30/03/22
+- Merge-sort e Quicksort
