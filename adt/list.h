@@ -14,7 +14,6 @@ class List {
 	
 	List() {
 		head = nullptr;
-		cout << head << endl;
 	}
 	
 	bool isEmpty() {
@@ -49,6 +48,37 @@ class List {
 		
 		Node<T> * temp = new Node<T>(val);
 		ptr->next = temp;		
+	}
+	
+	void insertInOrder(T val) {
+		
+		if(this->isEmpty()) {
+			this->insertHead(val);
+			return;
+		}
+		if(val <= head->val) {
+			this->insertHead(val);
+			return;
+		}
+		
+		Node<T> *ptr = head;
+		while(ptr->getNext() && (val >= ptr->val)) {
+			
+			if(val <= ptr->next->val)
+				break;
+			
+			ptr = ptr->getNext();
+		}
+		
+		if(!(ptr->next)) {
+			this->insertTail(val);
+			return;
+		}
+		
+		Node<T> *toInsert = new Node<T>(val);
+		toInsert->next = ptr->next;
+		ptr->next = toInsert;
+			
 	}
 	
 	friend ostream& operator<<(ostream& out, const List<T> &list) {
