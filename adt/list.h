@@ -81,6 +81,63 @@ class List {
 			
 	}
 	
+	void removeHead() {
+		if(this->isEmpty()) {
+			cout << "Empty list!" << endl;
+			return;
+		}
+		
+		Node<T> *temp = head;
+		head = head->next;
+		
+		delete temp;
+	}
+	
+	void removeTail() {
+		if(this->isEmpty()) {
+			cout << "Empty list!" << endl;
+			return;
+		}
+		
+		Node<T> *cur = head;
+		Node<T> *prev = nullptr;
+		while(cur->next) {
+			prev = cur;
+			cur = cur->next;			
+		}
+		
+		prev->next = nullptr;
+		delete cur;
+	}
+	
+	void remove(T val) {
+		
+		if(this->isEmpty()) {
+			cout << "Empty list!" << endl;
+			return;
+		}
+		
+		if(head->val == val) {
+			this->removeHead();
+			return;
+		}
+		
+		Node<T> *cur = head;
+		Node<T> *prev = nullptr;
+		while(cur->next && cur->val != val) {
+			prev = cur;
+			cur = cur->next;
+		}
+		
+		if(!(cur->next) && cur->val != val) {
+			cout << "Element with value " << val << "not found" << endl;
+			return;
+		}
+		
+		prev->next = cur->next;
+		delete cur;
+	}
+	
 	friend ostream& operator<<(ostream& out, const List<T> &list) {
 		out << "List head=" << list.head << endl;
 		Node<T> *ptr = list.head;
