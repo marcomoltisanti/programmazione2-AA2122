@@ -8,6 +8,7 @@ using namespace std;
 
 template <typename T>
 class List {
+	protected:
 	Node<T>* head;
 	
 	public:
