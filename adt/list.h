@@ -10,6 +10,7 @@ template <typename T>
 class List {
 	protected:
 	Node<T>* head;
+	int size = 0;
 	
 	public:
 	
@@ -26,6 +27,7 @@ class List {
 	void insert(T val) {
 		if(this->isEmpty()) {
 			head = new Node<T>(val);
+			size++;
 			return;
 		}
 	}
@@ -34,6 +36,7 @@ class List {
 		Node<T> *temp = new Node<T>(val);
 		temp->next = head;
 		this->head = temp;
+		size++;
 	}
 	
 	void insertTail(T val) {
@@ -48,7 +51,8 @@ class List {
 		}
 		
 		Node<T> * temp = new Node<T>(val);
-		ptr->next = temp;		
+		ptr->next = temp;
+		size++;
 	}
 	
 	void insertInOrder(T val) {
@@ -79,6 +83,7 @@ class List {
 		Node<T> *toInsert = new Node<T>(val);
 		toInsert->next = ptr->next;
 		ptr->next = toInsert;
+		size++;
 			
 	}
 	
@@ -90,6 +95,8 @@ class List {
 		
 		Node<T> *temp = head;
 		head = head->next;
+		
+		size--;
 		
 		delete temp;
 	}
@@ -108,6 +115,7 @@ class List {
 		}
 		
 		prev->next = nullptr;
+		size--;
 		delete cur;
 	}
 	
@@ -136,6 +144,7 @@ class List {
 		}
 		
 		prev->next = cur->next;
+		size--;
 		delete cur;
 	}
 	

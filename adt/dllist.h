@@ -1,8 +1,13 @@
 #ifndef DLLIST
 #define DLLIST
 
+#include "dlnode.h"
+
 template<typename T>
 class DLList {
+	
+	protected:
+	
 	DLNode<T> *head;
 	DLNode<T> *tail;
 	
@@ -19,7 +24,7 @@ class DLList {
 	
 	void insertHead(T val) {
 		if(this->isEmpty()) {
-			head = new DLNode(val);
+			head = new DLNode<T>(val);
 			tail = head;
 			return;
 		}
@@ -52,7 +57,8 @@ class DLList {
 			DLNode<T> *ptr = head;
 			head = nullptr;
 			tail = nullptr;
-			delete ptr;			
+			delete ptr;	
+			return;
 		}
 		
 		DLNode<T> *ptr = head;

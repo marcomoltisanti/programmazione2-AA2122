@@ -23,3 +23,21 @@
 - Ordinamento per scambio, SelectionSort, InsertionSort, BubbleSort
 8. Lezione 08 - 30/03/22
 - Merge-sort e Quicksort
+9. Lezione 09 - 04/04/22
+- Merge-sort
+10. Lezione 10 - 06/04/22
+- Object Oriented Programming
+11. Lezione 11 - 22/04/22
+- Esercitazione
+12. Lezione 12 - 27/04/22
+- Object Oriented Programming
+13. Lezione 13 - 04/05/22
+- Ereditarietà, polimorfismo e template
+14. Lezione 14 - 09/05/22
+- Liste
+15. Lezione 15 - 11/05/22
+- Liste
+16. Lezione 16 - 16/05/22
+- Pile
+17. Lezione 17 - 18/05/22
+- Code 

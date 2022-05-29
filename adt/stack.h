@@ -40,7 +40,7 @@ class Stack : protected List<T> {
 		return ptr;
 	}
 	
-	friend std::ostream& operator<<(std::ostream& out, Stack<T> s) {
+	friend std::ostream& operator<<(std::ostream& out, Stack<T>& s) {
 		return out << (List<T>)s;
 	}
 	
