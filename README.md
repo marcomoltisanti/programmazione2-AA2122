@@ -41,3 +41,8 @@
 - Pile
 17. Lezione 17 - 18/05/22
 - Code 
+18. Lezione 18 - 01/06/22
+- Alberi Binari di Ricerca: definizioni, inserimento e visita
+19. Lezione 19 - 06/06/22
+- Alberi Binari di Ricerca: inserimento, predecessore, successore, minimo, massimo, ricerca
+
