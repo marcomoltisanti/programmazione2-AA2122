@@ -90,9 +90,9 @@ class BST {
 		return max(root);
 	}
 	
-	BSTNode<T>* max(BSTNode<T>* from) {
+	BSTNode<T>* max(BSTNode<T>* from) throw() {
 		if(isEmpty()) {
-			return NULL;
+			throw "Empty BST!";
 		}
 		
 		BSTNode<T>* ptr = from;
@@ -144,6 +144,81 @@ class BST {
 			return search(ptr->right, key);
 		
 		return nullptr;
+	}
+	
+	BSTNode<T>* remove(BSTNode<T>* node) {
+		//CASO 1
+		//il nodo è una foglia
+		if(node->left == nullptr && node->right == nullptr) {
+			if(node == node->parent->left)
+				node->parent->left = nullptr;
+			else if (node == node->parent->right)
+				node->parent->right = nullptr;
+			
+			return node;
+		}
+		
+		//CASO 2
+		//il nodo da eliminare ha solo un figlio destro
+		if(node->left == nullptr && node->right != nullptr) {
+			node->right->parent = node->parent;
+			
+			//il nodo da eliminare è figlio sx
+			if(node == node->parent->left) {
+				node->parent->left = node->right;
+			}
+			//il nodo da eliminare è figlio dx
+			else if(node == node->parent->right) {
+				node->parent->right = node->right;
+			}
+			return node;
+		}
+		
+		//il nodo da eliminare ha solo un figlio sinistro
+		if(node->left != nullptr && node->right == nullptr) {
+			node->left->parent = node->parent;
+			
+			//il nodo da eliminare è figlio sx
+			if(node == node->parent->left) {
+				node->parent->left = node->left;
+			}
+			//il nodo da eliminare è figlio dx
+			else if(node == node->parent->right) {
+				node->parent->right = node->left;
+			}
+			return node;
+		}
+		
+		return nullptr;
+	}
+	
+	BSTNode<T>* remove(T key) {
+		if(this->isEmpty()) {
+			return nullptr;
+		}
+		
+		BSTNode<T>* node = this->search(key);
+		if(node == nullptr)
+			return nullptr;
+		
+		BSTNode<T>* toDelete = this->remove(node);
+		
+		if(toDelete != nullptr)
+			return toDelete;
+		
+		//CASO 3
+		//il nodo da eliminare ha due figli
+		//sostituiamo la chiave nel nodo da eliminare con la chiave del suo successore
+		BSTNode<T>* next = this->successor(node);
+		//sostituzione della chiave
+		T swap = node->key;
+		node->key = next ->key;
+		next->key = swap;
+		
+		//richiamo la procedura di cancellazione (casi 1 e 2) sul successore
+		toDelete = this->remove(next);
+		
+		return toDelete;
 	}
 	
 	

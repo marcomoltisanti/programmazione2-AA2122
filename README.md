@@ -45,4 +45,6 @@
 - Alberi Binari di Ricerca: definizioni, inserimento e visita
 19. Lezione 19 - 06/06/22
 - Alberi Binari di Ricerca: inserimento, predecessore, successore, minimo, massimo, ricerca
-
+20. Lezione 20 - 08/06/22
+- Alberi Binari di Ricerca: cancellazione e complessità
+- Cenni sulle eccezioni

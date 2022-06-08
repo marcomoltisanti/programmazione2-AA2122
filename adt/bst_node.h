@@ -18,7 +18,7 @@ class BSTNode {
 	
 	public: 
 	
-	BSTNode(T key, bool verbose=false) : key(key), verbose(verbose) {
+	BSTNode(T key, bool verbose=true) : key(key), verbose(verbose) {
 		left = nullptr;
 		right = nullptr;
 		parent = nullptr;
