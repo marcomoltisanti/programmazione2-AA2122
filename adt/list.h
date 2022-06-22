@@ -11,10 +11,11 @@ class List {
 	protected:
 	Node<T>* head;
 	int size = 0;
+	bool verbose;
 	
 	public:
 	
-	List() {
+	List(bool verbose=false) : verbose(verbose) {
 		head = nullptr;
 	}
 	
@@ -26,14 +27,14 @@ class List {
 	
 	void insert(T val) {
 		if(this->isEmpty()) {
-			head = new Node<T>(val);
+			head = new Node<T>(val, verbose);
 			size++;
 			return;
 		}
 	}
 	
 	void insertHead(T val) {	
-		Node<T> *temp = new Node<T>(val);
+		Node<T> *temp = new Node<T>(val, verbose);
 		temp->next = head;
 		this->head = temp;
 		size++;
@@ -50,7 +51,7 @@ class List {
 			ptr = ptr->getNext();
 		}
 		
-		Node<T> * temp = new Node<T>(val);
+		Node<T> * temp = new Node<T>(val, verbose);
 		ptr->next = temp;
 		size++;
 	}
@@ -80,7 +81,7 @@ class List {
 			return;
 		}
 		
-		Node<T> *toInsert = new Node<T>(val);
+		Node<T> *toInsert = new Node<T>(val, verbose);
 		toInsert->next = ptr->next;
 		ptr->next = toInsert;
 		size++;
@@ -149,11 +150,22 @@ class List {
 	}
 	
 	friend ostream& operator<<(ostream& out, const List<T> &list) {
-		out << "List head=" << list.head << endl;
-		Node<T> *ptr = list.head;
-		while(ptr != nullptr) {
-			out << "\t" << *ptr << endl;
-			ptr = ptr->getNext();
+		if(list.verbose) {
+			out << "List head=" << list.head << endl;
+			Node<T> *ptr = list.head;
+			while(ptr != nullptr) {
+				out << "\t" << *ptr << endl;
+				ptr = ptr->getNext();
+			}
+		}
+		else {
+			Node<T> *ptr = list.head;
+			while(ptr->getNext() != nullptr) {
+				out << *ptr << " -> ";
+				ptr = ptr->getNext();
+			}
+			
+			out << *ptr;
 		}
 		
 		return out;

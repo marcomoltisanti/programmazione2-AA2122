@@ -90,7 +90,7 @@ class BST {
 		return max(root);
 	}
 	
-	BSTNode<T>* max(BSTNode<T>* from) throw() {
+	BSTNode<T>* max(BSTNode<T>* from) {
 		if(isEmpty()) {
 			throw "Empty BST!";
 		}
